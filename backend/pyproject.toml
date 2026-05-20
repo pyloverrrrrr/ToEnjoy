@@ -1,0 +1,36 @@
+[project]
+name = "remediant"
+version = "0.1.0"
+description = "Remediant — 医患双端服务平台"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.34.0",
+    "python-jose[cryptography]>=3.3.0",
+    "bcrypt>=4.2.0",
+    "sqlalchemy[asyncio]>=2.0.36",
+    "aiomysql>=0.2.0",
+    "aioredis>=2.0.1",
+    "chromadb-client>=0.5.23",
+    "langchain>=0.3.14",
+    "langchain-community>=0.3.14",
+    "rank-bm25>=0.2.2",
+    "jieba>=0.42.1",
+    "pydantic>=2.10.0",
+    "pydantic-settings>=2.7.0",
+    "python-multipart>=0.0.19",
+    "httpx>=0.28.0",
+    "minio>=7.2.0",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=8.3.0",
+    "pytest-asyncio>=0.25.0",
+    "pytest-httpx>=0.35.0",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
